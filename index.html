@@ -14,9 +14,6 @@
         .form-group { margin-bottom: 25px; }
         label { display: block; font-size: 13px; margin-bottom: 8px; font-weight: 500; }
         input[type="text"], input[type="tel"], input[type="number"], textarea { width: 100%; padding: 8px 0; border: none; border-bottom: 1px solid var(--border-color); font-size: 14px; background: transparent; box-sizing: border-box; }
-        .options-group { display: grid; grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); gap: 10px; margin-top: 5px; }
-        .option-item { font-size: 12px; color: #666; display: flex; align-items: center; cursor: pointer; }
-        .option-item input { margin-right: 6px; }
         .submit-btn { width: 100%; padding: 15px; background: #1a1a1a; color: white; border: none; letter-spacing: 3px; cursor: pointer; margin-top: 40px; }
     </style>
 </head>
@@ -25,7 +22,7 @@
 <div class="container">
     <header><h1>OGGI 鮮食客製化諮詢表單</h1></header>
 
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSff8BwKKOMBFVscyBmLJf33Ql4eXtTCxgeF_4ee-A7KqCC8Bw/formResponse" method="POST" id="consultationForm">
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSff8BwKKOMBFVscyBmLJf33Ql4eXtTCxgeF_4ee-A7KqCC8Bw/formResponse" method="POST">
         
         <div class="section-title">CONTACT. 家長聯絡</div>
         <div class="form-group"><label>家長姓名</label><input type="text" name="entry.1373076892" required></div>
@@ -35,25 +32,17 @@
 
         <div class="section-title">PHASE 1. 毛孩生理數據</div>
         <div class="form-group"><label>毛孩姓名</label><input type="text" name="entry.771549081" required></div>
-        <div class="form-group"><label>品種</label><input type="text" name="entry.179917053"></div>
         <div class="form-group"><label>生日 / 年齡 (例如：Nana 19歲)</label><input type="text" name="entry.922681677"></div>
-        <div class="form-group"><label>體重 (kg)</label><input type="number" name="entry.1884086175" step="0.1"></div>
+        <div class="form-group"><label>目前體重 (kg)</label><input type="number" name="entry.1884086175" step="0.1"></div>
 
         <div class="form-group">
-            <label>備註需求</label>
+            <label>特殊需求備註</label>
             <textarea name="entry.373516377" rows="3"></textarea>
         </div>
 
         <button type="submit" class="submit-btn">提交諮詢</button>
     </form>
 </div>
-
-<script>
-    // 簡單的提交監聽
-    document.getElementById('consultationForm').onsubmit = function() {
-        alert('正在提交資訊...請稍候！');
-    };
-</script>
 
 </body>
 </html>
