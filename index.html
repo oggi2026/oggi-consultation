@@ -14,7 +14,12 @@
         .form-group { margin-bottom: 25px; }
         label { display: block; font-size: 13px; margin-bottom: 8px; font-weight: 500; }
         input[type="text"], input[type="tel"], input[type="number"], textarea { width: 100%; padding: 8px 0; border: none; border-bottom: 1px solid var(--border-color); font-size: 14px; background: transparent; box-sizing: border-box; }
+        .options-group { display: grid; grid-template-columns: repeat(auto-fill, minmax(145px, 1fr)); gap: 10px; margin-top: 5px; }
+        .option-item { font-size: 12px; color: #666; display: flex; align-items: center; cursor: pointer; }
+        .option-item input { margin-right: 6px; }
+        .other-input { width: 100%; border: none; border-bottom: 1px solid #eee; font-size: 12px; padding: 5px 0; margin-top: 8px; display: block; color: #bfa07d; }
         .submit-btn { width: 100%; padding: 15px; background: #1a1a1a; color: white; border: none; letter-spacing: 3px; cursor: pointer; margin-top: 40px; }
+        .footer-note { margin-top: 40px; font-size: 12px; color: #999; text-align: center; line-height: 1.8; border-top: 1px solid #f9f9f9; padding-top: 20px; }
     </style>
 </head>
 <body>
@@ -22,27 +27,149 @@
 <div class="container">
     <header><h1>OGGI 鮮食客製化諮詢表單</h1></header>
 
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSff8BwKKOMBFVscyBmLJf33Ql4eXtTCxgeF_4ee-A7KqCC8Bw/formResponse" method="POST">
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSff8BwKKOMBFVscyBmLJf33Ql4eXtTCxgeF_4ee-A7KqCC8Bw/formResponse" method="POST" target="hidden_iframe">
         
         <div class="section-title">CONTACT. 家長聯絡</div>
         <div class="form-group"><label>家長姓名</label><input type="text" name="entry.1373076892" required></div>
-        <div class="form-group"><label>目前居住地區</label><input type="text" name="entry.441119790"></div>
+        <div class="form-group"><label>目前居住地區</label><input type="text" name="entry.441119790" placeholder="例如：台北市大安區"></div>
         <div class="form-group"><label>聯絡電話</label><input type="tel" name="entry.1833926884" required></div>
         <div class="form-group"><label>Line ID</label><input type="text" name="entry.1824022639" required></div>
 
         <div class="section-title">PHASE 1. 毛孩生理數據</div>
         <div class="form-group"><label>毛孩姓名</label><input type="text" name="entry.771549081" required></div>
-        <div class="form-group"><label>生日 / 年齡 (例如：Nana 19歲)</label><input type="text" name="entry.922681677"></div>
+        <div class="form-group"><label>品種</label><input type="text" name="entry.179917053" placeholder="例如：19歲的 Nana"></div>
+        <div class="form-group"><label>生日 / 年齡</label><input type="text" name="entry.922681677"></div>
+        <div class="form-group">
+            <label>性別與結紮</label>
+            <div class="options-group">
+                <label class="option-item"><input type="radio" name="entry.1897446138" value="男生已結紮"> 男生已結紮</label>
+                <label class="option-item"><input type="radio" name="entry.1897446138" value="男生未結紮"> 男生未結紮</label>
+                <label class="option-item"><input type="radio" name="entry.1897446138" value="女生已結紮"> 女生已結紮</label>
+                <label class="option-item"><input type="radio" name="entry.1897446138" value="女生未結紮"> 女生未結紮</label>
+            </div>
+        </div>
         <div class="form-group"><label>目前體重 (kg)</label><input type="number" name="entry.1884086175" step="0.1"></div>
 
+        <div class="section-title">PHASE 2. 生活與體態</div>
         <div class="form-group">
-            <label>特殊需求備註</label>
-            <textarea name="entry.373516377" rows="3"></textarea>
+            <label>居住環境</label>
+            <div class="options-group">
+                <label class="option-item"><input type="radio" name="entry.1846814604" value="純室內"> 純室內</label>
+                <label class="option-item"><input type="radio" name="entry.1846814604" value="有大陽台或庭院"> 有大陽台或庭院</label>
+                <label class="option-item"><input type="radio" name="entry.1846814604" value="半戶外"> 半戶外</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>體態觀察</label>
+            <div class="options-group">
+                <label class="option-item"><input type="radio" name="entry.577005833" value="過瘦"> 過瘦</label>
+                <label class="option-item"><input type="radio" name="entry.577005833" value="標準"> 標準</label>
+                <label class="option-item"><input type="radio" name="entry.577005833" value="稍微肉肉"> 稍微肉肉</label>
+                <label class="option-item"><input type="radio" name="entry.577005833" value="肥胖"> 肥胖</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>活動量</label>
+            <div class="options-group">
+                <label class="option-item"><input type="radio" name="entry.540942679" value="幾乎不動"> 幾乎不動</label>
+                <label class="option-item"><input type="radio" name="entry.540942679" value="每日散步 30 分鐘內"> 每日散步 30 分鐘內</label>
+                <label class="option-item"><input type="radio" name="entry.540942679" value="每日運動 1 小時以上"> 每日運動 1 小時以上</label>
+                <label class="option-item"><input type="radio" name="entry.540942679" value="高強度工作犬"> 高強度工作犬</label>
+            </div>
+        </div>
+
+        <div class="section-title">PHASE 3. 飲食與偏好</div>
+        <div class="form-group"><label>目前主要食用的品牌與產品名</label><input type="text" name="entry.90579357"></div>
+        <div class="form-group">
+            <label>挑食程度</label>
+            <div class="options-group">
+                <label class="option-item"><input type="radio" name="entry.1288700040" value="極度挑食"> 極度挑食</label>
+                <label class="option-item"><input type="radio" name="entry.1288700040" value="普通"> 普通</label>
+                <label class="option-item"><input type="radio" name="entry.1288700040" value="不挑食"> 不挑食</label>
+            </div>
+        </div>
+        <div class="form-group"><label>喜愛吃的食材</label><input type="text" name="entry.920789842"></div>
+        <div class="form-group"><label>討厭或不吃的食材</label><input type="text" name="entry.1452556794"></div>
+
+        <div class="section-title">PHASE 4. 健康狀況</div>
+        <div class="form-group">
+            <label>過敏原調查 (已知過敏食材，可多選)</label>
+            <div class="options-group">
+                <label class="option-item"><input type="checkbox" name="entry.2006133143" value="無"> 無</label>
+                <label class="option-item"><input type="checkbox" name="entry.2006133143" value="雞肉"> 雞肉</label>
+                <label class="option-item"><input type="checkbox" name="entry.2006133143" value="牛肉"> 牛肉</label>
+                <label class="option-item"><input type="checkbox" name="entry.2006133143" value="鴨肉"> 鴨肉</label>
+                <label class="option-item"><input type="checkbox" name="entry.2006133143" value="魚肉"> 魚肉</label>
+                <label class="option-item"><input type="checkbox" name="entry.2006133143" value="穀類"> 穀類</label>
+            </div>
+            <input type="text" name="entry.2006133143.other_option_response" class="other-input" placeholder="其他過敏食材...">
+        </div>
+        
+        <div class="form-group">
+            <label>慢性病史 (可多選)</label>
+            <div class="options-group">
+                <label class="option-item"><input type="checkbox" name="entry.67108584" value="無"> 無</label>
+                <label class="option-item"><input type="checkbox" name="entry.67108584" value="腎臟疾病"> 腎臟疾病</label>
+                <label class="option-item"><input type="checkbox" name="entry.67108584" value="胰臟炎"> 胰臟炎</label>
+                <label class="option-item"><input type="checkbox" name="entry.67108584" value="心臟病"> 心臟病</label>
+                <label class="option-item"><input type="checkbox" name="entry.67108584" value="糖尿病"> 糖尿病</label>
+                <label class="option-item"><input type="checkbox" name="entry.67108584" value="下尿路結石"> 下尿路結石</label>
+            </div>
+            <input type="text" name="entry.67108584.other_option_response" class="other-input" placeholder="其他病史...">
+        </div>
+
+        <div class="form-group">
+            <label>目前是否正在服用保健品 (可多選)</label>
+            <div class="options-group">
+                <label class="option-item"><input type="checkbox" name="entry.2037272317" value="魚油"> 魚油</label>
+                <label class="option-item"><input type="checkbox" name="entry.2037272317" value="關節保健"> 關節保健</label>
+                <label class="option-item"><input type="checkbox" name="entry.2037272317" value="益生菌"> 益生菌</label>
+                <label class="option-item"><input type="checkbox" name="entry.2037272317" value="皮膚藥"> 皮膚藥</label>
+                <label class="option-item"><input type="checkbox" name="entry.2037272317" value="中藥"> 中藥</label>
+            </div>
+            <input type="text" name="entry.2037272317.other_option_response" class="other-input" placeholder="其他保健品...">
+        </div>
+
+        <div class="section-title">PHASE 5. 諮詢重點與備註</div>
+        <div class="form-group">
+            <label>最希望改善或關注之問題 (可多選)</label>
+            <div class="options-group">
+                <label class="option-item"><input type="checkbox" name="entry.1934572734" value="腸胃穩定"> 腸胃穩定</label>
+                <label class="option-item"><input type="checkbox" name="entry.1934572734" value="體重控制"> 體重控制</label>
+                <label class="option-item"><input type="checkbox" name="entry.1934572734" value="腎臟保養"> 腎臟保養</label>
+                <label class="option-item"><input type="checkbox" name="entry.1934572734" value="皮膚／毛髮狀況"> 皮膚/毛髮</label>
+                <label class="option-item"><input type="checkbox" name="entry.1934572734" value="食慾改善"> 食慾改善</label>
+                <label class="option-item"><input type="checkbox" name="entry.1934572734" value="老年保養"> 老年保養</label>
+            </div>
+            <input type="text" name="entry.1934572734.other_option_response" class="other-input" placeholder="其他關注問題...">
+        </div>
+
+        <div class="form-group">
+            <label>特殊需求備註 (例如：牙口不好需要打碎)</label>
+            <textarea name="entry.373516377" rows="3" placeholder="請填寫任何需要特別注意的地方..."></textarea>
         </div>
 
         <button type="submit" class="submit-btn">提交諮詢</button>
     </form>
+
+    <div class="footer-note">
+        感謝提供資訊。我會為您的毛孩配置專屬方案。<br>
+        提交後請加入 LINE 並傳送<strong>「體態照片/血檢報告」</strong>：<br>
+        <div style="margin-top:15px;">
+            <a href="https://lin.ee/7pBa3z5">
+                <img src="https://scdn.line-apps.com/n/line_add_friends/btn/zh-Hant.png" alt="加入好友" height="36" border="0">
+            </a>
+        </div>
+    </div>
 </div>
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+<script>
+    document.querySelector('form').onsubmit = function() {
+        alert('資訊已收到！\n\n請點擊下方的 LINE 按鈕傳送「照片或血檢報告」給我們，謝謝！');
+    };
+</script>
 
 </body>
 </html>
