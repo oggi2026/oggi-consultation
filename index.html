@@ -18,7 +18,6 @@
         .option-item { font-size: 12px; color: #666; display: flex; align-items: center; cursor: pointer; }
         .option-item input { margin-right: 6px; }
         .submit-btn { width: 100%; padding: 15px; background: #1a1a1a; color: white; border: none; letter-spacing: 3px; cursor: pointer; margin-top: 40px; }
-        .footer-note { margin-top: 40px; font-size: 12px; color: #999; text-align: center; line-height: 1.8; border-top: 1px solid #f9f9f9; padding-top: 20px; }
     </style>
 </head>
 <body>
@@ -26,7 +25,7 @@
 <div class="container">
     <header><h1>OGGI 鮮食客製化諮詢表單</h1></header>
 
-    <form action="https://docs.google.com/forms/d/e/1FAIpQLSff8BwKKOMBFVscyBmLJf33Ql4eXtTCxgeF_4ee-A7KqCC8Bw/formResponse" method="POST" target="hidden_iframe" id="consultationForm">
+    <form action="https://docs.google.com/forms/d/e/1FAIpQLSff8BwKKOMBFVscyBmLJf33Ql4eXtTCxgeF_4ee-A7KqCC8Bw/formResponse" method="POST" id="consultationForm">
         
         <div class="section-title">CONTACT. 家長聯絡</div>
         <div class="form-group"><label>家長姓名</label><input type="text" name="entry.1373076892" required></div>
@@ -38,63 +37,21 @@
         <div class="form-group"><label>毛孩姓名</label><input type="text" name="entry.771549081" required></div>
         <div class="form-group"><label>品種</label><input type="text" name="entry.179917053"></div>
         <div class="form-group"><label>生日 / 年齡 (例如：Nana 19歲)</label><input type="text" name="entry.922681677"></div>
-        
-        <div class="form-group">
-            <label>性別與結紮</label>
-            <div class="options-group">
-                <label class="option-item"><input type="radio" name="entry.1897446138" value="男生已結紮"> 男生已結紮</label>
-                <label class="option-item"><input type="radio" name="entry.1897446138" value="男生未結紮"> 男生未結紮</label>
-                <label class="option-item"><input type="radio" name="entry.1897446138" value="女生已結紮"> 女生已結紮</label>
-                <label class="option-item"><input type="radio" name="entry.1897446138" value="女生未結紮"> 女生未結紮</label>
-            </div>
-        </div>
-
-        <div class="form-group"><label>目前體重 (kg)</label><input type="number" name="entry.1884086175" step="0.1"></div>
-
-        <div class="section-title">PHASE 2. 生活與體態</div>
-        <div class="form-group">
-            <label>居住環境</label>
-            <div class="options-group">
-                <label class="option-item"><input type="radio" name="entry.1846814604" value="純室內"> 純室內</label>
-                <label class="option-item"><input type="radio" name="entry.1846814604" value="有大陽台或庭院"> 有大陽台或庭院</label>
-                <label class="option-item"><input type="radio" name="entry.1846814604" value="半戶外"> 半戶外</label>
-            </div>
-        </div>
+        <div class="form-group"><label>體重 (kg)</label><input type="number" name="entry.1884086175" step="0.1"></div>
 
         <div class="form-group">
-            <label>體態觀察</label>
-            <div class="options-group">
-                <label class="option-item"><input type="radio" name="entry.577005833" value="過瘦"> 過瘦</label>
-                <label class="option-item"><input type="radio" name="entry.577005833" value="標準"> 標準</label>
-                <label class="option-item"><input type="radio" name="entry.577005833" value="稍微肉肉"> 稍微肉肉</label>
-                <label class="option-item"><input type="radio" name="entry.577005833" value="肥胖"> 肥胖</label>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label>特殊需求備註 (例如：牙口不好需打碎)</label>
+            <label>備註需求</label>
             <textarea name="entry.373516377" rows="3"></textarea>
         </div>
 
         <button type="submit" class="submit-btn">提交諮詢</button>
     </form>
-
-    <div class="footer-note">
-        感謝提供資訊。我會為您的毛孩配置專屬方案。<br>
-        提交後請加入 LINE 並傳送<strong>「體態照片/血檢報告」</strong>：<br>
-        <div style="margin-top:15px;">
-            <a href="https://lin.ee/7pBa3z5">
-                <img src="https://scdn.line-apps.com/n/line_add_friends/btn/zh-Hant.png" alt="加入好友" height="36" border="0">
-            </a>
-        </div>
-    </div>
 </div>
 
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
-
 <script>
+    // 簡單的提交監聽
     document.getElementById('consultationForm').onsubmit = function() {
-        alert('資訊已收到！\n\n請點擊下方的 LINE 按鈕傳送照片資料，謝謝！');
+        alert('正在提交資訊...請稍候！');
     };
 </script>
 
